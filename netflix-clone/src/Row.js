@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from './axios';
+import './Row.css';
 
-const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
+const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/original';
 
-export default function Row({ title, fetchURL }) {
+export default function Row({ title, fetchURL, isLargeRow }) {
     const [movies, setMovies] = useState([]);
 
     // runs based on a specific condition in this case
@@ -24,7 +25,11 @@ export default function Row({ title, fetchURL }) {
             <h2>{title}</h2>
             <div className="row__posters">
                 {movies.map(movie => {
-                    return <img className="row__poster" src={`${BASE_IMAGE_URL}${movie.poster_path}`} alt={movie.name}></img>
+                    return <img 
+                    key={movie.id}
+                    className={`row__poster ${isLargeRow && "row__poster--large"}`}
+                    src={`${BASE_IMAGE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path }`}
+                    alt={movie.name}></img>
                 })}
             </div>
         </div>
