@@ -16,3 +16,7 @@
   width: 80px;
   object-fit: contain;
 }
+
+.api-movie {
+  margin-left: 20px;
+}
