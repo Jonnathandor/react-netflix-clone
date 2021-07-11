@@ -1,9 +1,16 @@
+.row {
+  color: white;
+}
+
+.row h2 {
+  padding-top: 10px;
+}
+
 .row__posters {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 /* tell all browsers, dont display the scrollbar 
